@@ -1,0 +1,21 @@
+.video-section {
+  min-height: 50vh;          /* full screen */
+  display: flex;
+  justify-content: center;    /* horizontal center of inner block */
+  align-items: center;        /* vertical center */
+  background: #f8fbff;
+}
+
+.video-inner {
+  width: 100%;
+  max-width: 500px;           /* center column width */
+  padding: 0 1.5rem;
+}
+
+.video-frame {
+  max-width: 900px;
+  margin: 0 auto;             /* center inside column */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 0, 0, 0.18);
+}

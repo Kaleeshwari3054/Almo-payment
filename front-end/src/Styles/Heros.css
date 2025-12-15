@@ -1,0 +1,480 @@
+/* Heros.css - Complete Advanced Responsive Styles with Mobile Payment Card */
+
+:root {
+    --primary-color: #e63946;
+    --primary-hover: #d62828;
+    --text-primary: #222;
+    --text-secondary: #444;
+    --bg-light: #f9f9f9;
+    --card-bg: #fff;
+    --border-radius: 12px;
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.07);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* MAIN CONTAINER */
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* HERO LAYOUT */
+.hero.layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/* LEFT SIDE - Title + Banner Image */
+.hero-left {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+}
+
+.hero-title {
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 40px;
+    font-weight: 900;
+    color: #e60012;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-banner-wrapper {
+    width: 60%;
+    align-self: flex-start;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+}
+
+.hero-banner-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.hero-banner-wrapper:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-banner-wrapper:hover::before {
+    opacity: 1;
+}
+
+.hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+/* RIGHT SIDE - Payment Card (DESKTOP ONLY) */
+.hero-right.desktop-only {
+    flex: 1 1 40%;
+    max-width: 420px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* MOBILE PAYMENT CARD - PERFECT 150px SIDES */
+.mobile-payment-card {
+    display: none !important;
+}
+
+.mobile-payment-card .hero-card {
+    max-width: 200px;
+    /* width: calc(100% - 300px);  150px left + 150px right */
+    margin: 3rem auto 0;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* MOBILE - 150px LEFT/RIGHT MARGIN */
+@media (max-width: 768px) {
+    .mobile-payment-card {
+        display: block !important;
+        padding: 0 150px;  /* 150px left + 150px right */
+    }
+    
+    .hero-right.desktop-only {
+        display: none !important;
+    }
+}
+
+/* Small phones - reduce margin */
+@media (max-width: 600px) {
+    .mobile-payment-card {
+        padding: 0 75px;  /* 75px sides on small phones */
+       
+    }
+    
+    .mobile-payment-card .hero-card {
+        width: calc(100% - 150px);
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .mobile-payment-card {
+        padding: 0 20px;  /* Full width on tiny screens */
+    }
+    
+    .mobile-payment-card .hero-card {
+        width: 100%;
+        margin: 2rem auto 0;
+    }
+}
+
+
+/* PAYMENT CARD COMMON STYLES */
+.hero-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2.8rem 2.2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+    transition: var(--transition);
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22);
+}
+
+.hero-card-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 1.2rem 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-plan {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.4rem 1.4rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.hero-plan:hover {
+    border-color: var(--primary-color);
+    background: rgba(230, 57, 70, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.15);
+}
+
+.hero-plan input[type="radio"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.hero-plan-text h6 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.hero-plan-text small {
+    font-size: 0.95rem;
+    color: #7a7a7a;
+    font-weight: 500;
+}
+
+.hero-amount-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.45rem;
+    padding-top: 1.4rem;
+    border-top: 2px solid #f0f0f0;
+    color: var(--text-primary);
+}
+
+.hero-amount {
+    color: var(--primary-color) !important;
+    font-size: 1.5rem !important;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    font-weight: 800;
+    border: none;
+    border-radius: 14px;
+    padding: 1.3rem 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.hero-btn-primary:hover::before {
+    left: 100%;
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.6);
+}
+
+.hero-btn-secondary {
+    background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
+    color: #666;
+    border: 2px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 1rem 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.hero-btn-secondary:hover {
+    background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.15);
+}
+
+.hero-btn-secondary i {
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.hero-btn-secondary:hover i {
+    transform: scale(1.1);
+}
+
+/* TEXT BLOCK */
+.hero-text-block {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 2.5rem 3rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.15rem;
+}
+
+.hero-subtitle {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* PERFECT RESPONSIVE BREAKPOINTS */
+
+/* Large Desktop */
+@media (max-width: 1200px) {
+    .hero.layout {
+        gap: 3rem;
+    }
+    .hero-left {
+        max-width: 600px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero.layout {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .hero-left,
+    .hero-right.desktop-only {
+        max-width: 100%;
+    }
+    .hero-right.desktop-only {
+        justify-content: center;
+    }
+    .hero-banner-wrapper {
+        width: 70%;
+        align-self: center;
+    }
+}
+
+/* Mobile - KEY CHANGES HERE */
+@media (max-width: 768px) {
+    .main {
+        padding: 1.5rem 1rem;
+    }
+    
+    .hero.layout {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        text-align: center;
+        font-size: 2.2rem;
+    }
+    
+    .hero-banner-wrapper {
+        width: 80%;
+        align-self: center;
+    }
+    
+    /* HIDE DESKTOP PAYMENT CARD */
+    .hero-right.desktop-only {
+        display: none !important;
+    }
+    
+    /* SHOW MOBILE PAYMENT CARD */
+    .mobile-payment-card {
+        display: block !important;
+        margin-bottom: 100px;
+         
+    }
+    
+    .hero-card {
+        /* padding: 2rem 1.8rem; */
+        margin-top: 0;
+         max-width: 400px!important;
+          margin: 3rem auto 0;
+    padding: 2rem 1.5rem;
+    
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-banner-wrapper {
+        width: 100%;
+    }
+    
+    .hero-card {
+        /* padding: 1.8rem 1.5rem; */
+    }
+    
+    .hero-card-title {
+        /* font-size: 1.4rem; */
+    }
+    
+    .hero-plan {
+        padding: 1.2rem 1.2rem;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        font-size: 1.1rem;
+        padding: 1.1rem 0;
+    }
+    
+    .hero-amount-row {
+        font-size: 1.25rem;
+    }
+    
+    .hero-text-block {
+        padding: 1.5rem 1.2rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+/* High performance */
+.hero-banner-wrapper,
+.hero-card,
+.hero-plan,
+.hero-btn-primary,
+.hero-btn-secondary {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Loading animation for buttons */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.hero-btn-primary.loading {
+    background: linear-gradient(90deg, var(--primary-color) 25%, var(--primary-hover) 50%, var(--primary-color) 75%) !important;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
