@@ -1,8 +1,30 @@
+// import React from "react";
+// import banner from "../assets/Banner.jpeg";
+// // import { Link } from "lucide-react";
+
+// import { useNavigate } from "react-router-dom"; // ✅ add this
+// import "../Styles/Heros.css";
+// import {
+//   FaRupeeSign,
+//   FaRocket,
+//   FaBrain,
+//   FaCheckCircle,
+//   FaChartLine,
+//   FaHandshake,
+//   FaLifeRing,
+//   FaFire,
+//   FaTrophy,
+//   FaClock,
+//   FaBan,
+//   FaShareAlt,
+// } from "react-icons/fa";
+
+
 import React from "react";
 import banner from "../assets/Banner.jpeg";
-import { Link } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // ✅ add this
+import { useNavigate } from "react-router-dom";
 import "../Styles/Heros.css";
+
 import {
   FaRupeeSign,
   FaRocket,
@@ -17,6 +39,8 @@ import {
   FaBan,
   FaShareAlt,
 } from "react-icons/fa";
+
+
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -54,10 +78,7 @@ const Hero = () => {
             </div>
 
             {/* <button className="hero-btn-primary">Register Now</button> */}
-            <button
-              className="hero-btn-primary"
-              onClick={handleRegister} 
-            >
+            <button className="hero-btn-primary" onClick={handleRegister}>
               Register Now
             </button>
             <button className="hero-btn-secondary">
@@ -124,7 +145,8 @@ const Hero = () => {
           </p>
 
           <p className="hero-line">
-            <FaFire className="hero-icon fire" />
+            <span className="hero-icon income">₹</span>
+            <span className="hero-icon success">✓</span>
             One Day One Lakh ஒரு வாக்குறுதி மட்டும் இல்ல… உங்கள் வாழ்க்கையை
             மாற்றும் பயணம்.
           </p>
