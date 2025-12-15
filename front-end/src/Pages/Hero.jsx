@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <div className="main">
       <div className="hero layout">
-        {/* Left Side: Title + Banner Image (60% width) */}
+        {/* Left Side: Title + Banner Image */}
         <div className="hero-left">
           <h1 className="hero-title">One Day One Lakh Challenge</h1>
           <div className="hero-banner-wrapper">
